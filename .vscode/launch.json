@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "request": "launch",
+            "name": "cortex-debug",
+            "type": "cortex-debug",
+            "executable": "build/sx1278_hal.elf",
+            "servertype": "jlink",
+            "interface": "swd",
+            "device": "stm32f103c8",
+            "cwd": "${workspaceFolder}",
+            "svdFile": "toolchain/STM32F103xx.svd",
+            "swoConfig": {
+                "enabled": true,
+                "source": "probe",
+                "cpuFrequency": 72000000,
+                "swoFrequency": 6000000,
+                "decoders": [
+                    {
+                        "type": "console",
+                        "label": "SWO 0",
+                        "port": 0,
+                        "encoding": "ascii",
+                    }
+                ]
+
+            }
+        }
+    ]
+}
